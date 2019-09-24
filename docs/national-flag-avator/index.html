@@ -14,6 +14,7 @@
     #img-body {
       width: 200px;
       height: 200px;
+      overflow: hidden;
       margin: 0 auto;
       position: relative;
       display: -webkit-box;
@@ -59,30 +60,37 @@
   <p id="loading" style="display: none">头像生成中。。。</p>
   <input type="file" style="display: none" name="" id="file_input" onchange="fileChange()">
   <script>
-    let imgBody = document.querySelector('#img-body')
+    var imgBody = document.querySelector('#img-body')
+    var fileImg = null
+    var resultImg = null
     function addMyImg() {
+      if (fileImg) {
+        imgBody.removeChild(fileImg)
+      }
+      if (resultImg) {
+        document.body.removeChild(resultImg)
+      }
       document.querySelector('#file_input').click()
-      console.log(imgBody)
     }
     function fileChange() {
       let file = new FileReader()
       file.readAsDataURL(event.target.files[0])
+      loading.style.display = 'block'
       file.onload = (e) => {
-        console.log(e)
-        let img = document.createElement('img')
-        img.setAttribute('crossOrigin', 'anonymous');
-        img.src = e.srcElement.result
-        document.querySelector('#img-body').appendChild(img)
+        console.log('file.onload:', e)
+        fileImg = document.createElement('img')
+        fileImg.setAttribute('crossOrigin', 'anonymous');
+        fileImg.src = e.srcElement.result
+        document.querySelector('#img-body').appendChild(fileImg)
         var loading = document.querySelector("#loading")
         setTimeout(() => {
-          loading.style.display = 'block'
           html2canvas(imgBody).then(function (canvas) {
-            let imgs =  document.createElement('img')
-            imgs.src = canvas.toDataURL("image/png")
-            imgs.width = 400
-            imgs.height = 400
-            imgs.className = 'result_img'
-            document.body.appendChild(imgs);
+            resultImg =  document.createElement('img')
+            resultImg.src = canvas.toDataURL("image/png")
+            resultImg.width = 400
+            resultImg.height = 400
+            resultImg.className = 'result_img'
+            document.body.appendChild(resultImg);
             loading.style.display = 'none'
           });
         }, 1000)
