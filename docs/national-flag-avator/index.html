@@ -48,6 +48,38 @@
       font-size: 24px;
       margin: 40px 20px;
     }
+    .change_btn {
+      margin: 20px 0;
+      color: #fff;
+      background-color: #1890ff;
+      border-color: #1890ff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+      -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+      box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+      line-height: 1.5;
+      position: relative;
+      display: inline-block;
+      font-weight: 400;
+      white-space: nowrap;
+      text-align: center;
+      background-image: none;
+      border: 1px solid transparent;
+      -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+      box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+      cursor: pointer;
+      -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+      transition: all .3s cubic-bezier(.645, .045, .355, 1);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      height: 32px;
+      padding: 0 15px;
+      font-size: 14px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 
@@ -55,6 +87,7 @@
   <div id="img-body">
     <img id="bg-img" src="./head-2.png" onclick="addMyImg()" alt="">
   </div>
+  <button class="change_btn" onclick="changeFrame()">更换边框</button>
   <p>点击上方图片选择头像</p>
   <p>将下方生成的图保存到手机即可~</p>
   <p id="loading" style="display: none">头像生成中。。。</p>
@@ -63,6 +96,7 @@
     var imgBody = document.querySelector('#img-body')
     var fileImg = null
     var resultImg = null
+    
     function addMyImg() {
       if (fileImg) {
         imgBody.removeChild(fileImg)
@@ -72,6 +106,12 @@
       }
       document.querySelector('#file_input').click()
     }
+
+    function changeFrame() {
+      var frameImg = document.querySelector('#bg-img')
+      frameImg.src = frameImg.src.endsWith('head-1.png') ? './head-2.png' : './head-1.png'
+    }
+
     function fileChange() {
       let file = new FileReader()
       file.readAsDataURL(event.target.files[0])
