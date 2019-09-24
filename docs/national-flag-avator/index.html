@@ -4,20 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script type="text/javascript" src="://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script type="text/javascript" src="//html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <title>给我加个国旗吧~</title>
   <style>
     body {
       background: #e4e4e4;
+      text-align: center;
     }
     #img-body {
       width: 200px;
       height: 200px;
+      margin: 0 auto;
       position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -moz-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -moz-box-pack: center;
+      justify-content: center;
     }
     #img-body img {
       width: 100%;
-      height: 100%;
+    }
+    .result_img {
+      width: 200px;
+      height: 200px;
     }
     #bg-img {
       position: absolute;
@@ -26,6 +43,10 @@
       bottom: 0;
       right: 0;
     }
+    #loading {
+      font-size: 24px;
+      margin: 40px 20px;
+    }
   </style>
 </head>
 
@@ -33,9 +54,9 @@
   <div id="img-body">
     <img id="bg-img" src="./head-2.png" onclick="addMyImg()" alt="">
   </div>
-  <p>点击生成</p>
+  <p>点击上方图片选择头像</p>
   <p>将下方生成的图保存到手机即可~</p>
-  <p>速成版，后续更新中</p>
+  <p id="loading" style="display: none">头像生成中。。。</p>
   <input type="file" style="display: none" name="" id="file_input" onchange="fileChange()">
   <script>
     let imgBody = document.querySelector('#img-body')
@@ -52,13 +73,17 @@
         img.setAttribute('crossOrigin', 'anonymous');
         img.src = e.srcElement.result
         document.querySelector('#img-body').appendChild(img)
+        var loading = document.querySelector("#loading")
         setTimeout(() => {
+          loading.style.display = 'block'
           html2canvas(imgBody).then(function (canvas) {
             let imgs =  document.createElement('img')
             imgs.src = canvas.toDataURL("image/png")
-            imgs.width = 200
-            imgs.height = 200
+            imgs.width = 400
+            imgs.height = 400
+            imgs.className = 'result_img'
             document.body.appendChild(imgs);
+            loading.style.display = 'none'
           });
         }, 1000)
       }
