@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <title>给我加个国旗吧~</title>
+  <style>
+    body {
+      background: #e4e4e4;
+    }
+    #img-body {
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+    #img-body img {
+      width: 100%;
+      height: 100%;
+    }
+    #bg-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="img-body">
+    <img id="bg-img" src="./head-2.png" onclick="addMyImg()" alt="">
+  </div>
+  <p>点击生成</p>
+  <p>将下方生成的图保存到手机即可~</p>
+  <p>速成版，后续更新中</p>
+  <input type="file" style="display: none" name="" id="file_input" onchange="fileChange()">
+  <script>
+    let imgBody = document.querySelector('#img-body')
+    function addMyImg() {
+      document.querySelector('#file_input').click()
+      console.log(imgBody)
+    }
+    function fileChange() {
+      let file = new FileReader()
+      file.readAsDataURL(event.target.files[0])
+      file.onload = (e) => {
+        console.log(e)
+        let img = document.createElement('img')
+        img.setAttribute('crossOrigin', 'anonymous');
+        img.src = e.srcElement.result
+        document.querySelector('#img-body').appendChild(img)
+        setTimeout(() => {
+          html2canvas(imgBody).then(function (canvas) {
+            let imgs =  document.createElement('img')
+            imgs.src = canvas.toDataURL("image/png")
+            imgs.width = 200
+            imgs.height = 200
+            document.body.appendChild(imgs);
+          });
+        }, 1000)
+      }
+    }
+  </script>
+</body>
+</html>
