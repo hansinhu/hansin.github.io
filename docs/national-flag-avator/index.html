@@ -78,9 +78,10 @@
       loading.style.display = 'block'
       file.onload = (e) => {
         console.log('file.onload:', e)
+        var target = e.srcElement || e.target
         fileImg = document.createElement('img')
         fileImg.setAttribute('crossOrigin', 'anonymous');
-        fileImg.src = e.srcElement.result
+        fileImg.src = target.result
         document.querySelector('#img-body').appendChild(fileImg)
         var loading = document.querySelector("#loading")
         setTimeout(() => {
