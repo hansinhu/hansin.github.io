@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="//html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <title>给我加个国旗吧~</title>
+  <style>
+    body {
+      background: #e4e4e4;
+      text-align: center;
+    }
+    p {
+      margin: 0;
+    }
+    #img-body {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #999;
+      overflow: hidden;
+      margin: 0 auto;
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -moz-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -moz-box-pack: center;
+      justify-content: center;
+    }
+    #img-body img {
+      width: 100%;
+    }
+    .result_img {
+      width: 300px;
+      height: 300px;
+    }
+    #hat-img {
+      width: 70px !important;
+      height: 70px;
+      position: absolute;
+      left: 115px;
+      top: 30px;
+    }
+    #loading {
+      font-size: 24px;
+      margin: 40px 20px;
+    }
+    .change_btn {
+      margin: 20px 0;
+      color: #fff;
+      background-color: #1890ff;
+      border-color: #1890ff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+      -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+      box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+      line-height: 1.5;
+      position: relative;
+      display: inline-block;
+      font-weight: 400;
+      white-space: nowrap;
+      text-align: center;
+      background-image: none;
+      border: 1px solid transparent;
+      -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+      box-shadow: 0 2px 0 rgba(0,0,0,0.015);
+      cursor: pointer;
+      -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+      transition: all .3s cubic-bezier(.645, .045, .355, 1);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      height: 32px;
+      padding: 0 15px;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+    /*
+    * <button class="change_btn" onclick="changeFrame()">更换边框</button>
+    */
+  </style>
+</head>
+
+<body>
+  <div id="img-body" onclick="addMyImg()">
+    <img id="hat-img" src="./c2.png" alt="">
+  </div>
+  <p>1.点击上方空白区域选择头像</p>
+  <p>2.拖动圣诞帽调整位置</p>
+  <p>3.长按下方生成的图片保存到手机即可~</p>
+  <p id="loading" style="display: none">头像生成中。。。</p>
+  <input type="file" style="display: none" name="" id="file_input" onchange="fileChange()">
+  <script>
+    var imgBody = document.querySelector('#img-body')
+    var hatImg = document.querySelector('#hat-img')
+    var loading = document.querySelector("#loading")
+    var fileImg = null
+    var resultImg = null
+    var resultId = 0
+    var timer = null
+    
+    function addMyImg() {
+      if (fileImg) {
+        imgBody.removeChild(fileImg)
+      }
+      if (resultImg) {
+        document.body.removeChild(resultImg)
+      }
+      document.querySelector('#file_input').click()
+    }
+
+    function changeFrame() {
+      var frameImg = document.querySelector('#bg-img')
+      frameImg.src = frameImg.src.endsWith('head-1.png') ? './head-2.png' : './head-1.png'
+    }
+
+    function fileChange() {
+      let file = new FileReader()
+      file.readAsDataURL(event.target.files[0])
+      loading.style.display = 'block'
+      file.onload = (e) => {
+        console.log('file.onload:', e)
+        var target = e.srcElement || e.target
+        fileImg = document.createElement('img')
+        fileImg.setAttribute('crossOrigin', 'anonymous');
+        fileImg.src = target.result
+        document.querySelector('#img-body').appendChild(fileImg)
+        toCanvas()
+      }
+    }
+
+    function toCanvas() {
+      if (resultId > 0) {
+        const preImg = document.querySelector('#i' + (resultId - 1))
+        preImg.style.display = 'none'
+      }
+      if (timer) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(() => {
+        console.log('---')
+        html2canvas(imgBody).then(function (canvas) {
+          resultImg =  document.createElement('img')
+          resultImg.src = canvas.toDataURL("image/png")
+          resultImg.id = 'i' + resultId
+          resultId ++
+          resultImg.width = 400
+          resultImg.height = 400
+          resultImg.className = 'result_img'
+          document.body.appendChild(resultImg);
+          loading.style.display = 'none'
+        });
+      }, 1000)
+    }
+
+    hatImg.addEventListener('click', function(e) {
+      e.stopPropagation()
+    })
+
+    var startPageObj = {
+      pageX: 0,
+      pageY: 0,
+    }
+    var startLeft = 115
+    var startTop = 30
+
+    hatImg.addEventListener('touchstart', function(e) {
+      startPageObj = {
+        pageX: e.targetTouches[0].pageX,
+        pageY: e.targetTouches[0].pageY,
+      }
+    })
+
+    hatImg.addEventListener('touchmove', function(e) {
+      var style = {
+        left: Math.floor(startLeft + (e.targetTouches[0].pageX - startPageObj.pageX)) + 'px',
+        top: Math.floor(startTop + (e.targetTouches[0].pageY - startPageObj.pageY)) + 'px',
+      }
+      hatImg.style.left = style.left
+      hatImg.style.top = style.top
+    })
+
+    hatImg.addEventListener('touchend', function(e) {
+      toCanvas()
+      startLeft = Number(hatImg.style.left.replace('px', ''))
+      startTop = Number(hatImg.style.top.replace('px', ''))
+      console.log(startLeft, startTop)
+    })
+
+  </script>
+</body>
+</html>
