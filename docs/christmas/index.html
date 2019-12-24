@@ -36,8 +36,11 @@
       -moz-box-pack: center;
       justify-content: center;
     }
-    #img-body img {
+    .target_img {
       width: 100%;
+      position: absolute;
+      left: 0;
+      z-index: 1;
     }
     .result_img {
       width: 300px;
@@ -49,6 +52,7 @@
       position: absolute;
       left: 115px;
       top: 30px;
+      z-index: 2;
     }
     #loading {
       font-size: 24px;
@@ -133,6 +137,7 @@
         console.log('file.onload:', e)
         var target = e.srcElement || e.target
         fileImg = document.createElement('img')
+        fileImg.className = 'target_img'
         fileImg.setAttribute('crossOrigin', 'anonymous');
         fileImg.src = target.result
         document.querySelector('#img-body').appendChild(fileImg)
