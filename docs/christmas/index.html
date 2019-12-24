@@ -24,10 +24,15 @@
       font: inherit;
       margin: 0;
     }
-    #img-body {
+    .file-box {
       width: 300px;
       height: 300px;
       border: 1px solid #999;
+      margin: 0 auto;
+    }
+    #img-body {
+      width: 300px;
+      height: 300px;
       overflow: hidden;
       margin: 0 auto;
       position: relative;
@@ -147,9 +152,12 @@
 </head>
 
 <body>
-  <div id="img-body" onclick="addMyImg()">
-    <img id="hat-img" style="width: 70px; height: 70px;" src="./c2.png" alt="">
+  <div class="file-box" onclick="addMyImg()">
+    <div id="img-body">
+      <img id="hat-img" style="width: 70px; height: 70px;" src="./c2.png" alt="">
+    </div>
   </div>
+  
   <div>调整头像大小</div>
   <div class="slidecontainer">
     <input type="range" min="30" max="150" value="70"  onchange="sizeChange()" class="slider" />
@@ -177,12 +185,13 @@
     var startTop = 30
     
     function addMyImg() {
-      if (fileImg) {
-        imgBody.removeChild(fileImg)
-        fileImg = null
+      var fileNode = document.querySelector('.target_img')
+      if (fileNode) {
+        imgBody.removeChild(fileNode)
       }
-      if (resultImg) {
-        document.body.removeChild(resultImg)
+      const preImg = document.querySelector('.result_img')
+      if (preImg) {
+        document.body.removeChild(preImg)
       }
       document.querySelector('#file_input').click()
     }
@@ -217,9 +226,9 @@
     }
 
     function toCanvas() {
-      const preImg = document.querySelector('#i' + (resultId - 1))
+      const preImg = document.querySelector('.result_img')
       if (preImg) {
-        preImg.style.display = 'none'
+        document.body.removeChild(preImg)
       }
       if (timer) {
         clearTimeout(timer)
