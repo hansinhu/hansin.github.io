@@ -139,11 +139,9 @@
     }
 
     function toCanvas() {
-      if (resultId > 0) {
-        const preImg = document.querySelector('#i' + (resultId - 1))
-        if (preImg) {
-          preImg.style.display = 'none'
-        }
+      const preImg = document.querySelector('#i' + (resultId - 1))
+      if (preImg) {
+        preImg.style.display = 'none'
       }
       if (timer) {
         clearTimeout(timer)
