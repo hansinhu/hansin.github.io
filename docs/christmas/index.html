@@ -8,10 +8,21 @@
   <title>圣诞老人，请给我个圣诞帽~</title>
   <style>
     body {
-      background: #e4e4e4;
+      background: #eee;
       text-align: center;
     }
     p {
+      margin: 0;
+      padding-left: 12px;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+    input {
+      overflow: visible;
+      font: inherit;
       margin: 0;
     }
     #img-body {
@@ -47,7 +58,7 @@
       height: 300px;
     }
     #hat-img {
-      width: 70px !important;
+      width: 70px;
       height: 70px;
       position: absolute;
       left: 115px;
@@ -90,6 +101,46 @@
       font-size: 14px;
       border-radius: 4px;
     }
+    
+    .slidecontainer {
+      width: 100%; /* Width of the outside container */
+    }
+
+    /* The slider itself */
+    .slider {
+      -webkit-appearance: none;  /* Override default CSS styles */
+      appearance: none;
+      width: 300px; /* Full-width */
+      margin: 0 auto;
+      height: 25px; /* Specified height */
+      background: #d3d3d3; /* Grey background */
+      outline: none; /* Remove outline */
+      opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+      -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+      transition: opacity .2s;
+    }
+
+    /* Mouse-over effects */
+    .slider:hover {
+      opacity: 1; /* Fully shown on mouse-over */
+    }
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none; /* Override default look */
+      appearance: none;
+      width: 25px; /* Set a specific slider handle width */
+      height: 25px; /* Slider handle height */
+      background: #1890ff; /* Green background */
+      cursor: pointer; /* Cursor on hover */
+    }
+
+    .slider::-moz-range-thumb {
+      width: 25px; /* Set a specific slider handle width */
+      height: 25px; /* Slider handle height */
+      background: #1890ff; /* Green background */
+      cursor: pointer; /* Cursor on hover */
+    }
     /*
     * <button class="change_btn" onclick="changeFrame()">更换边框</button>
     */
@@ -98,13 +149,19 @@
 
 <body>
   <div id="img-body" onclick="addMyImg()">
-    <img id="hat-img" src="./c2.png" alt="">
+    <img id="hat-img" style="width: 70px; height: 70px;" src="./c2.png" alt="">
+  </div>
+  <div>调整头像大小</div>
+  <div class="slidecontainer">
+    <input type="range" min="30" max="150" value="70"  onchange="sizeChange()" class="slider" />
   </div>
   <p>1.点击上方空白区域选择头像</p>
-  <p>2.拖动圣诞帽调整位置</p>
-  <p>3.长按下方生成的图片保存到手机即可~</p>
+  <p>(各位小主，上传前先裁剪成方形吧)</p>
+  <p>2.拖动圣诞帽调整大小</p>
+  <p>3.拖动圣诞帽调整位置</p>
+  <p>4.长按下方生成的图片保存到手机即可~</p>
   <p id="loading" style="display: none">头像生成中。。。</p>
-  <input type="file" style="display: none" name="" id="file_input" onchange="fileChange()">
+  <input type="file" style="display: none" name="" id="file_input" onchange="fileChange()" />
   <script>
     var imgBody = document.querySelector('#img-body')
     var hatImg = document.querySelector('#hat-img')
@@ -113,6 +170,12 @@
     var resultImg = null
     var resultId = 0
     var timer = null
+    var startPageObj = {
+      pageX: 0,
+      pageY: 0,
+    }
+    var startLeft = 115
+    var startTop = 30
     
     function addMyImg() {
       if (fileImg) {
@@ -146,6 +209,14 @@
       }
     }
 
+    function sizeChange() {
+      const val = event.target.value
+      startLeft = (300 - val) / 2
+      hatImg.style.width = val + 'px'
+      hatImg.style.height = val + 'px'
+      hatImg.style.left = startLeft + 'px'
+    }
+
     function toCanvas() {
       const preImg = document.querySelector('#i' + (resultId - 1))
       if (preImg) {
@@ -173,13 +244,6 @@
     hatImg.addEventListener('click', function(e) {
       e.stopPropagation()
     })
-
-    var startPageObj = {
-      pageX: 0,
-      pageY: 0,
-    }
-    var startLeft = 115
-    var startTop = 30
 
     hatImg.addEventListener('touchstart', function(e) {
       startPageObj = {
