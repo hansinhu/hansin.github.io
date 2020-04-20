@@ -1,0 +1,53 @@
+@import '../../pc_themes';
+
+:global{
+  .cf_modal_wrap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .cf_modal_container {
+    min-width: 380px;
+    border-radius: @radius-lg;
+    background: @fill-base;
+    color: @color-text-black;
+    position: relative;
+    max-height: 100vh;
+    .cf_modal_title {
+      font-size: 24px;
+      font-weight: 500;
+      text-align: center;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cf_modal_close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 1;
+      color: #666;
+      cursor: pointer;
+    }
+    .cf_modal_content {
+      font-size: @font-size-base;
+      padding: 24px;
+      color: @color-text-base;
+      overflow: auto;
+      max-height: 100vh;
+      width: 640px;
+    }
+    .cf_modal_btn{
+      text-align: center;
+      padding: @modal-btn-padding;
+    }
+  }
+}

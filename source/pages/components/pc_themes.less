@@ -1,0 +1,237 @@
+// @hd: 1px; // 基本单位
+
+// CF-APP默认主题
+
+// 色彩
+// ---
+// 文字色
+@color-text-base: #333;                  // 基本
+@color-text-base-inverse: #fff;          // 基本 - 反色
+@color-text-black: #000;                 // 黑色
+@color-text-secondary: #a4a9b0;          // 辅助色
+@color-text-placeholder: #ccc;           // 文本框提示
+@color-text-disabled: #ccc;              // 失效
+@color-text-caption: #888;               // 辅助描述
+@color-text-paragraph: #666;             // 段落
+@color-text-link: #398DE6;                     // 链接
+@color-text-icon: #666;
+
+// 背景色
+@fill-base: #fff;                           // 组件默认背景
+@fill-body: #EFF1F2;                        // 页面背景
+@fill-disabled: #ccc;                       // 通用失效背景
+@fill-mask: rgba(0, 0, 0, 0.4);              // 遮罩背景
+@fill-tap: #ddd;                             // 组件默认背景 - 按下
+@color-icon-base: #ccc;                      // 许多小图标的背景，比如一些小圆点，加减号
+@fill-grey: #f7f7f7;
+
+// 透明度
+@opacity-disabled: 0.4;   // checkbox radio 等组件禁用的透明度
+
+// 全局/品牌色
+@brand-primary: #FA423E; // 品牌色
+@brand-success: #6abf47;
+@brand-warning: #ffc600;
+@brand-error: #f4333c;
+@brand-important: #FA423E;  // 用于小红点
+@brand-wait: #108ee9;
+
+// 边框色
+@border-color-base: #e2e2e2;
+@border-color-primary: #FA423E;
+
+// 边框尺寸
+// ---
+@border-width-sm: .5px;
+@border-width-md: 1px;
+@border-width-lg: 2px;
+
+// 字体尺寸
+// ---
+@font-size-icontext: 10px;
+@font-size-caption-sm: 12px;
+@font-size-base: 14px;
+@font-size-caption: 16px;
+@font-size-heading: 18px;
+
+// 圆角
+// ---
+@radius-xs: 2px;
+@radius-sm: 3px;
+@radius-md: 4px;
+@radius-lg: 6px;
+@radius-circle: 50%;
+
+// 间距
+// ---
+// 水平间距
+@h-spacing-sm: 5px;
+@h-spacing-md: 8px;
+@h-spacing-lg: 12px;
+
+// 垂直间距
+@v-spacing-xs: 4px;
+@v-spacing-sm: 8px;
+@v-spacing-md: 12px;
+@v-spacing-lg: 16px;
+@v-spacing-xl: 20px;
+
+// 高度
+// ---
+@line-height-base: 1;           // 单行行高
+@line-height-paragraph: 1.5;    // 多行行高
+
+// 图标尺寸
+// ---
+@icon-size-xxs: 12px;
+@icon-size-xs: 14px;
+@icon-size-sm: 16px;
+@icon-size-md: 22px;       // 导航条上的图标、grid的图标大小
+@icon-size-lg: 26px;
+@icon-size-xlg: 36px;
+
+// 动画缓动
+// ---
+@ease-in-out-quint: cubic-bezier(.86, 0, .07, 1);
+
+// 组件变量
+// ---
+
+@actionsheet-item-height: 50px;
+@actionsheet-item-font-size: 18px;
+
+// button
+@button-height-xlg: 44px;
+@button-font-size-xlg: 18px;
+
+@button-height-lg: 40px;
+@button-font-size-lg: 16px;
+
+@button-height-md: 36px;
+@button-font-size-md: 16px;
+
+@button-height-sm: 30px;
+@button-font-size-sm: 14px;
+
+@button-height-xs: 24px;
+@button-font-size-xs: 14px;
+
+@button-fill-light: #FFF2F2;
+@button-fill-primary: linear-gradient(90deg, #FF604C, #EB104B);
+
+@ghost-button-color: @brand-primary;    // 同时应用于背景、文字颜色、边框色
+@ghost-button-fill-tap: fade(@brand-primary, 60%);
+
+@warning-button-fill: #e94f4f;
+@warning-button-fill-tap: #d24747;
+
+@link-button-fill-tap: #ddd;
+@link-button-font-size: 16px;
+
+// checkbox
+@checkbox_box_color: #999;
+@checkbox_size_sm: 18px;
+@checkbox_size_md: 22px;
+@checkbox_size_lg: 26px;
+// radio
+@radio_box_color: #999;
+@radio_size_sm: 18px;
+@radio_size_md: 22px;
+@radio_size_lg: 26px;
+
+// collapse
+@collapse-heading-height: 40px; // 按钮高度
+@collapse-heading-font-size: 50px; // 按钮高度
+
+// modal
+@modal-widht: 280px;
+@modal-font-size-heading: 18px;
+@modal-heading-height: 40px;
+@modal-content-padding: 0 12px;
+@modal-btn-padding: 12px;
+
+// list
+@list-title-height: 30px;
+@list-item-height-sm: 35px;
+@list-item-height: 44px;
+
+// input
+@input-label-width: 17px;       // InputItem、TextareaItem 文字长度基础值
+@input-font-size: 17px;
+@input-color-search-icon: #666; // input clear icon 的背景色
+@input-color-icon: #ccc; // input clear icon 的背景色
+@input-color-icon-tap: @brand-primary;
+
+// tabs
+@tabs-color: @color-text-base;
+@tabs-height: 44px;
+@tabs-font-size-heading: 16px;
+@tabs-ink-bar-height: @border-width-lg;
+
+// tag
+@tag-height: 24px;
+@tag-height-sm: 14px;
+@tag-color: @brand-primary;
+
+// segmented-control
+@segmented-control-color: @brand-primary;  // 同时应用于背景、文字颜色、边框色
+@segmented-control-height: 27px;
+@segmented-control-fill-tap: fade(@brand-primary, 0.1);
+
+// tab-bar
+@tab-bar-fill: #ebeeef;
+@tab-bar-height: 50px;
+
+// toast
+@toast-fill: rgba(58, 58, 58, 0.9); // toast, activity-indicator 的背景颜色
+
+// search-bar
+@search-bar-fill: #efeff4;
+@search-bar-height: 44px;
+@search-bar-input-height: 28px;
+@search-bar-font-size: 15px;
+@search-color-icon: #bbb; // input search icon 的背景色
+
+// notice-bar
+@notice-bar-fill: #ffebeb;
+@notice-bar-height: 32px;
+@notice-bar-color: @brand-primary;
+
+// z-index
+@progress-zindex: 2000;
+@popover-zindex: 1999;
+@toast-zindex: 1999;
+@action-sheet-zindex: 1000; // actonsheet 会放到 popup / modal 中
+@picker-zindex: 1000;
+@popup-zindex: 999;
+@modal-zindex: 999; // modal.alert 应该最大，其他应该较小
+@tabs-pagination-zindex: 999;
+@drawer-zindex: 999;
+
+// select-arrow
+@arrow-padding-y: 14px;
+@arrow-padding-x: 12px;
+
+@arrow-color-disable: #ccc;
+@arrow-color-tips:#ccc;
+@arrow-color-select:#666;
+@arrow-height: 20px;
+@arrow-font-size: 20px;
+
+// photo preview
+
+@preview-bg: #000;
+@preview-bg-opacity: 1;
+@preview-bar-bg: rgba(0, 0, 0, 0.5);
+@preview-bar-text-color: #ccc;
+@preview-caption-text-color: #ccc;
+@preview-bottom-bar-bg: rgba(53, 53, 53, 0.5);
+
+// badage
+
+@badage-bg-text: #f96268;
+
+// keyboard
+
+@keyboard-confirm-color: #398DE6;
+@keyboard-confirm-tap-color: #108ee9;

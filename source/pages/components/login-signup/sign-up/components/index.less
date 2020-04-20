@@ -1,0 +1,163 @@
+.pc_link_text{
+  color: #1890FF;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sign_wrap{
+  height: 530px;
+  background: #fff;
+  padding-top: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  :global {
+    .cf_check_box.cfm_checkbox_wrapper .cfm_checkbox.cfm_checkbox_md{
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+
+.sign_main {
+  box-sizing: border-box;
+}
+
+.sign_btn_wrap {
+  padding-bottom: 36px;
+  display: flex;
+  justify-content: space-between;
+  .sign_btn{
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
+.sign_input {
+  margin-bottom: 4px;
+  font-size: 16px;
+  color: #333;
+  &.sign_input_active {
+    :global {
+      .cfm_input_item_warp:not(.cfm_input_item_error) {
+        border-color: #333;
+      }
+    }
+  }
+  :global {
+    .cf_input_item_inner {
+      height: 40px;
+      line-height: 40px;
+    }
+    .cf_input_item_extra {
+      color: #666;
+    }
+  }
+  .pc_phone_lable {
+    font-weight: 400;
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 12px;
+      border-left: 1px solid #999;
+      margin-inline-start: 12px;
+    }
+  }
+}
+
+.sign_check_icon {
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+  &.is_checked {
+    color: #f15440;
+  }
+}
+
+.sign_verify {
+  margin-top: 40px;
+}
+
+.sign_btn {
+  margin-top: 34px !important;
+  font-size: 16px !important;
+}
+
+.sign_title_wrap {
+  margin-bottom: 40px;
+}
+
+.sign_title {
+  width: 100%;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 12px;
+}
+
+.sign_tips {
+  color: #666;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+}
+
+.sign_bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 36px;
+  color: #666;
+  font-size: 14px;
+  .sign_or{
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+// 密码输入框
+.sign_inputextra {
+  display: flex;
+  align-items: center;
+}
+.sign_hidepwd {
+  padding-inline-end: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.sign_voice_code {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.sign_toggle_account {
+  padding: 6px 0;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.m_switch_account_btn {
+  margin-top: 20px !important;
+}
+
+.sign_terms {
+  font-size: 12px;
+  margin-top: 20px;
+  display: flex;
+  .sign_terms_text {
+    margin-inline-start: 6px;
+    line-height: 16px;
+  }
+  :global{
+    .cfm_icon-md {
+      width: 18px !important;
+      height: 18px !important;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+
+@import '../../pc_themes.less';
+
+:global{
+  .cf_message {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: -1024;
+    width: 100%;
+    top: -15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    transition-property: top,opacity;
+  
+    &.cf_message_open {
+      z-index: 1024!important;
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .cf_message_content {
+      background: @toast-fill;
+      color: #000;
+      opacity: 1;
+      padding: 10px;
+      border-radius: 5px;
+      min-width: 100px;
+      width: 50%;
+      padding: 10px;
+      display: flex;
+      margin-top: 5px;
+      &.cf_message_info{
+        background: #edf2fc;
+        color: #909399;
+        border: 1px solid #ebeef5;
+      }
+      &.cf_message_error{
+        background: #FAEBEB;
+        border: 1px solid #FFA09E;
+        // color: #f56c6c;
+        color: rgba(0,0,0,0.65);
+      }
+      &.cf_message_success{
+        background: #f0f9eb;
+        color: #67c23a;
+        border: 1px solid #e1f3d8;
+      }
+      .cf_message_text{
+        padding-inline-start: 6px;
+      }
+    }
+  }
+}

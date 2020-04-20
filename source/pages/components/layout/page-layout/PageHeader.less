@@ -1,0 +1,200 @@
+.header_wrap{
+  height: 56px;
+  .header {
+    height: 56px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg,#FF5447 0%,#FA4946 100%);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  }
+  .header_content{
+    width: 1184px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .search_warp{
+    flex: 1;
+  }
+  .header_left{
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    .menu_item{
+      height: 56px;
+      padding: 0 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      &:hover{
+        background: #fff;
+        color: #FA4946;
+        .arrow_icon{
+          transform: rotate(-180deg);
+        }
+        :global(.iconfont) {
+          color: inherit;
+        }
+      }
+      
+      .menu_item_text{
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 24px;
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 0;
+          height: 24px;
+          top: 0;
+          right: -16px;
+          border-right: 1px solid rgba(255, 255, 255, .5);
+        }
+      }
+    }
+    .menu_user{
+      max-width: 70px;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .menu_icon{
+      color: #fff;
+      font-size: 32px;
+    }
+    .arrow_icon{
+      font-size: 18px;
+      color: #fff;
+      margin-inline-start: 6px;
+      transition: transform linear .2s;
+    }
+    .arrow_icon_2{
+      margin-inline-start: 2px;
+    }
+  }
+  .cf_logo{
+    height: 40px;
+    width: 210px;
+    background-image: url('//f.cfcdn.club/assets/81852065414de50034c7c0a1b1cf505b_574x126.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+  .cf_logo_b2b{
+    height: 32px;
+    margin: 0 20px;
+    background-image: url('@/img/b2blogo.png');
+  }
+}
+
+.tip_warp{
+  position: relative;
+  .tip_text{
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    display: inline-block;
+    padding: 0 5px;
+    line-height: 18px;
+    border-radius: 10px;
+    background: #fff;
+    color: #FA4946;
+    border: 1px solid #FA4946;
+  }
+}
+
+.country_menu, .language_menu{
+  width: 180px;
+  & > ul > li {
+    padding: 12px;
+  }
+}
+
+.country_img {
+  height: 20px;
+  width: 30px;
+  margin-inline-start: 6px;
+}
+.country_item{
+  display: flex;
+  align-items: center;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  img{
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 18px;
+    width: 28px;
+    margin-inline-end: 12px;
+  }
+}
+
+.language_item {
+  display: flex;
+  align-items: center;
+  .check_icon {
+    flex-shrink: 0;
+    position: relative;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    box-sizing: border-box;
+    margin-inline-end: 12px;
+    border: 1px solid #999;
+    border-radius: 50%;
+    &.check_icon_active {
+      border-color: #FA4946;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        left: 4px;
+        top: 4px;
+        background: #FA4946;
+      }
+    }
+  }
+  .language_text {
+    flex-shrink: 1;
+    max-width: 140px;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.down_icon{
+  display: inline-block;
+  overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 113px;
+  height: 34px;
+  margin-top: 12px;
+  &.apple{
+    background-image: url(https://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg);
+  }
+  &.google{
+    background-image: url(https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png);
+    background-size: 130px;
+    background-position: -8px;
+    margin-top: 4px;
+  }
+}

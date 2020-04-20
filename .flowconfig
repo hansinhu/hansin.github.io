@@ -1,0 +1,23 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.name_mapper='^m/' ->'<PROJECT_ROOT>/source/pages/msite/'
+module.name_mapper='^@/' ->'<PROJECT_ROOT>/source/'
+module.name_mapper='.*\(.css|.less\)'->'empty/object'
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.ts
+module.file_ext=.tsx
+module.file_ext=.json
+module.file_ext=.css
+module.file_ext=.less
+esproposal.decorators=ignore
+esproposal.optional_chaining=enable
+
+[strict]

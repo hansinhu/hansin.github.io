@@ -1,0 +1,186 @@
+.security {
+  height: 530px;
+}
+
+.top_tips{
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 12px;
+}
+
+.top_title2 {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0;
+  margin: 30px 0 0 0;
+}
+
+.se_list{
+  .se_item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #BEBEBE;
+    cursor: pointer;
+    font-size: 14px;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 305px;
+    height: 42px;
+    margin-top: 20px;
+    border-radius: 4px;
+    &.se_item_disable {
+      border-color: #ccc;
+      color: #ccc;
+    }
+  }
+  .se_icon{
+    color: #666;
+    margin: 0 12px;
+    font-size: 18px;
+    &.se_icon_disable{
+      color: #ccc;
+    }
+  }
+}
+
+.se_contact{
+  margin-top: 12px;
+  color: #4A90E2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.drawer_title{
+  position: relative;
+  .left_icon{
+    position: absolute;
+    left: 10px;
+    top: 0;
+    i {
+      font-size: 18px;
+    }
+  }
+}
+
+.drawer_content{
+  overflow: auto;
+  .phone_label{
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      height: 16px;
+      width: 0;
+      border-right: 1px solid #333;
+      top: 6px;
+      right: 6px;
+    }
+  }
+  .timer_sen{
+    color: #999;
+  }
+  .timer_rsen{
+    color: #4A90E2;
+    &.phone_send_disabled {
+      color: #CCCCCC;
+    }
+  }
+
+  .tip_content {
+    margin-bottom: 40px;
+  }
+  .tip_text{
+    color: #666;
+    line-height: 18px;
+  }
+  .tip_text_order{
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
+  .tip_text_1{
+    color: #333;
+  }
+  .tip_text_2{
+    color: #999;
+    font-size: 12px;
+  }
+  .account{
+    color: #333;
+  }
+  .cant_access{
+    color: #4398FF;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    span{
+      display: inline-block;
+      padding: 6px 4px 12px 4px;
+    }
+  }
+  .voice_code {
+    color: #999;
+    .voice_code_able {
+      color: #398DE6;
+    }
+  }
+  .input_container{
+    margin: 12px 0;
+  }
+  .drawer_btn{
+    margin-top: 30px;
+  }
+}
+
+.code_title {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.down_modal{
+  padding: 40px 0;
+  padding-bottom: 20px;
+}
+
+.down_tip{
+  margin-bottom: 24px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.down_icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+:global{
+  .security_input.cfm_input_item{
+    padding-top: 0;
+    .cfm_input_item_clear{
+      margin-top: 4px;
+    }
+  }
+  .icon-Googleiconlogo{
+    color: #DD4B39;
+  }
+}
+.voice_code_modal {
+  font-size: 14px;
+  line-height: 17px;
+  color: #666666;
+}
+
+.pc_link_text {
+  color: #1890FF;
+  cursor: pointer;
+}

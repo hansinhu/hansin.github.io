@@ -1,0 +1,60 @@
+.cf_gender_modal{
+    
+  /**cfm 覆盖cf-ui-mobile样式*/
+  .cf_gender_title{
+    margin-bottom: 60px;
+    .cf_gender_h{
+      margin: 0;
+      padding: 0;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+    }
+    .cf_gender_p{
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      color: #666;
+      margin-top: 8px;
+    }
+  }
+  .cf_gender_content{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+  }
+  .cf_gender_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+    font-size: 20px;
+    &.active{
+      .cf_gender_bg{
+        border-color: #FA423E;
+      }
+    }
+  }
+  .cf_gender_bg{
+    width: 144px;
+    height: 144px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    margin-bottom: 8px;
+  }
+  .cf_male{
+    background-image: url('@/img/gender_m.png');
+  }
+  .cf_female{
+    background-image: url('@/img/gender_f.png');
+  }
+
+  :global{
+    .cf_modal_content{
+      padding: 60px;
+    }
+  }
+}
+

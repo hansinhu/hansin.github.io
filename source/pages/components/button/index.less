@@ -1,0 +1,62 @@
+
+@buttonPrefixCls: cf_btn;
+
+.@{buttonPrefixCls} {
+  width: auto;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  margin: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  user-select: none;
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+  cursor: pointer;
+  &_xs{
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+  }
+  &_sm{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+  }
+  &_md{
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+  }
+  &_lg{
+    height: 48px;
+    line-height: 48px;
+    font-size: 16px;
+  }
+  &_xlg{
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+  }
+  &_primary{
+    color: #fff;
+    background: linear-gradient(90deg, #FF604C, #EB104B);
+  }
+  &_white{
+    border: 1px solid #999;
+    background: #fff;
+    color: #333;
+  }
+  &_light{
+    border: 1px solid #FA423E;
+    background: #fff;
+    color: #FA423E; 
+  }
+  &_disabled {
+    border: none;
+    background: #ccc !important;
+    color: #fff !important;
+    cursor: not-allowed;
+  }
+}

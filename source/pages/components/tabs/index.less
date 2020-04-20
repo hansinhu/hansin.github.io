@@ -1,0 +1,52 @@
+:global{
+  .cf-tabs{
+    background: #fff;
+    .cf-tabs-bar{
+      display: flex;
+      border-bottom: 1px solid #E6E6E6;
+    }
+    .cf-tabs-bar-item{
+      height: 36px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      color: #333;
+      .cf-tabs-bar-inner{
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &.cf-tabs-bar-active{
+        position: relative;
+        .cf-tabs-bar-inner{
+          // border-color: #e4393c;
+          // color: #e4393c;
+          font-weight: 500;
+        }
+        &::after{
+          content: '';
+          display: block;
+          position: absolute;
+          width: 40px;
+          height: 3px;
+          background: #FA4946;
+          border-radius: 4px;
+          bottom: -1.5px;
+        }
+      }
+    }
+
+    .cf-tabs-content-item{
+      padding: 24px;
+      display: none;
+      &.cf-tabs-content-active{
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+:global{
+  .cf_modal {
+    position: fixed;
+    z-index: -1024;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    transition-property: opacity;
+  
+    &.cf_modal_open {
+      z-index: 1024!important;
+      opacity: 1;
+      visibility: visible;
+    }
+    .cf_modal_mask{
+      z-index: 998;
+      position: fixed;
+      width: 100%;
+      background-color: @fill-mask;
+      height: 100%;
+    }
+  }
+}

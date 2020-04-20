@@ -1,0 +1,41 @@
+.summary_content{
+  margin-bottom: 24px;
+}
+
+.summary_item{
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 48px;
+  & > span {
+    &:nth-child(1){
+      color: #666;
+    }
+    &:nth-child(2){
+      color: #333;
+    }
+  }
+  &.pay_total{
+    border-top: 1px solid #E6E6E6;
+    margin-top: 12px;
+    padding-top: 12px;
+    & > span {
+      &:nth-child(1){
+        color: #333;
+      }
+      &:nth-child(2){
+        color: #333;
+      }
+    }
+  }
+  .total_paid_count{
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+}
+
+.tax{
+  text-align: right;
+  color: #999;
+}

@@ -1,0 +1,11 @@
+[defaults]
+url = https://raven.clubfactory.com
+org = sentry
+project = indexer-react
+apiKey = 624ee1b41ee04ef18e1a11a271bb0bbbe341d28280364d38b7063dfa422d79a7
+
+[auth]
+token = 624ee1b41ee04ef18e1a11a271bb0bbbe341d28280364d38b7063dfa422d79a7
+
+[http]
+keepalive=false

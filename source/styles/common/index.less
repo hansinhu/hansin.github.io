@@ -1,0 +1,159 @@
+@import '../iconfont/iconfont.css';
+@import '../variables.less';
+
+@red: #F15440;
+
+html,body {
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  &.fixed {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    body {
+      overflow: hidden;
+      position: relative;
+      box-sizing: border-box;
+      height: 100%;
+    }
+  }
+}
+body {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.rtl{
+  direction: rtl;
+}
+.ltr{
+  direction: ltr;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  border: none;
+  padding: 0;
+
+  &:focus, &:active {
+    outline: 0;
+  }
+}
+
+hr {
+  margin: 0;
+  width: 100%;
+  border-top: 8px solid #F2F2F2;
+  border-bottom: 0;
+  border-right: 0;
+  border-left: 0;
+}
+
+a {
+  // webkit a tag background-color
+  -webkit-tap-highlight-color: transparent;
+}
+
+// 字体大小
+.f-12{
+  font-size: 12px;
+}
+.f-14{
+  font-size: 14px;
+}
+.f-16{
+  font-size: 16px;
+}
+.f-18{
+  font-size: 18px;
+}
+.f-20{
+  font-size: 20px;
+}
+.f-22{
+  font-size: 22px;
+}
+.f-24{
+  font-size: 24px;
+}
+.f-26{
+  font-size: 26px;
+}
+.f-28{
+  font-size: 28px;
+}
+.f-38{
+  font-size: 38px;
+}
+.f-50{
+  font-size: 50px;
+  height: 38px;
+  margin-top: -16px;
+}
+
+// color
+.red-text{
+  color: @color_red;
+}
+.b_000_text{
+  color: @color_black_000;
+}
+
+// loading
+.loadingGif {
+  width: 100%;
+  height: 1px;
+  text-align: center;
+  img {
+    width: 100px;
+  }
+}
+
+.def-bg{
+  background: url(data:image/png;base64,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) center 0 no-repeat;
+  background-size: 100% auto;
+}
+
+.border-top:after {
+  content: '';
+  width: 100%;
+  height: 0;
+  border-top: 1px solid #E7E7E7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleY(0.5);
+  -webkit-transform: scaleY(0.5);
+}
+
+.border-bottom:after {
+  content: '';
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid #E7E7E7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleY(0.5);
+  -webkit-transform: scaleY(0.5);
+
+}
+
+.BorderBottom {
+  border-bottom: 1px solid #E6E6E6!important;
+}
+
+.link_mail {
+  color: #398DE6;
+  text-decoration: none;
+}

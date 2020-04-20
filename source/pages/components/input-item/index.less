@@ -1,0 +1,110 @@
+:global{
+  .cf_input_item{
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 14px;
+    &.cf_input_item_toggle{
+      padding-top: 24px;
+    }
+    &.cf_input_item_error{
+      .cf_input_item_warp{
+        border-bottom: 1px solid #f4333c;
+      }
+    }
+    &.cf_input_item_disabled{
+      color: #ccc;
+    }
+    // &.cf_input_item_focus {
+    //   .cf_input_item_warp{
+    //     border-bottom: 1px solid #333;
+    //   }
+    // }
+    .cf_input_item_warp{
+      position: relative;
+      display: flex;
+      align-items: center;
+      line-height: 20px;
+      border-bottom: 1px solid #e2e2e2;
+    }
+    .cf_input_item_label{
+      padding: 4px 1px;
+      color: #333;
+      font-weight: 500;
+      position: relative;
+      flex-shrink: 0;
+      padding-inline-end: 12px;
+    }
+    .cf_input_item_control{
+      flex-grow: 1;
+      display: flex;
+    }
+    .cf_input_item_inner{
+      box-sizing: border-box;
+      width: 100%;
+      padding: 4px 1px;
+      height: 28px;
+      line-height: 22px;
+      border: none;
+      outline: none;
+      border-radius: 0;
+      background: none;
+      box-shadow: none;
+      &::-webkit-input-placeholder {
+        color: #999;
+      }
+      &::-webkit-outer-spin-button{
+        -webkit-appearance: none;
+      }
+      &::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+      }
+      &[type='number']{
+        -moz-appearance: textfield;
+      }
+      &:disabled{
+        color: #999;
+      }
+    }
+    .cf_input_item_extra{
+      flex-shrink: 0;
+    }
+    .cf_input_item_clear{
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      margin: 0 4px;
+    }
+    .cf_input_item_placeholder{
+      color: #999;
+      height: 0;
+      line-height: 28px;
+      position: absolute;
+      top: 0;
+      transition: all 100ms linear;
+      &.cf_input_item_top{
+        transform: translateY(-20px);
+        font-size: 12px;
+        left: 0;
+      }
+    }
+    input:focus ~ .cf_input_item_placeholder{
+      transform: translateY(-20px);
+      font-size: 12px;
+      left: 0;
+    }
+  }
+  
+  .cf_input_item_error_tips{
+    font-size: 12px;
+    color: #f4333c;
+    margin-top: 4px;
+  }
+}
+
+input[type="text"], input[type="password"], input[type="number"], textarea {
+  -webkit-appearance: none;
+}

@@ -1,0 +1,83 @@
+.form_content{
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  :global{
+    .cf_input_item .cf_input_item_control{
+      .cf_input_item_inner:disabled{
+        color: #333;
+      }
+    }
+  }
+}
+.inline_warp{
+  display: flex;
+}
+
+.input_item{
+  width: 100%;
+}
+.inline_input{
+  display: flex;
+  width: 50%;
+  flex-grow: 0;
+  overflow: hidden;
+  .margin_start{
+    margin-inline-start: 24px;
+  }
+}
+
+.inline_input_2{
+  display: flex;
+  width: 53%;
+  flex-grow: 0;
+  overflow: hidden;
+}
+.inline_input_country{
+  :global{
+    .cf_input_item .cf_input_item_control{
+      width: 120px;
+    }
+  }
+}
+
+.input_extra{
+  font-size: 12px;
+  color: #999;
+  word-break: break-all;
+  display: inline-block;
+  &.input_extra_2{
+    width: 120%;
+  }
+}
+
+.address_cancel_btn{
+  margin-inline-start: 20px;
+}
+
+.ship_type{
+  background: #F8F8F8;
+  padding: 24px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  .title_2{
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .ship_t_list{
+    display: flex;
+    > div:not(:first-child){
+      margin-left: 24px;
+    }
+  }
+  .radio_text{
+    margin-inline-start: 8px;
+  }
+  .radio_tip{
+    color: #999;
+  }
+}
+
+.my_confrim_title{
+  margin: 5px 0;
+}

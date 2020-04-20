@@ -1,0 +1,33 @@
+:global{
+  .cf_toggle_menu{
+    width: 160px;
+    max-height: 360px;
+    overflow: auto;
+    ul{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      padding: 16px 24px;
+      font-size: 14px;
+      color: #666;
+      cursor: pointer;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      &:hover{
+        color: #333;
+        font-weight: 500;
+        background: #F8F8F8;
+      }
+      &.cf_toggle_item_active{
+        color: #FA4946;
+        font-weight: 500;
+      }
+    }
+  }
+}

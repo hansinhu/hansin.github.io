@@ -1,0 +1,162 @@
+.coupon{
+  width: 330px;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  &::before,&::after{
+    content: '';
+    display: block;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #666;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 24px;
+    background: #fff;
+  }
+  &::before{
+    left: -8px;
+  }
+  &::after{
+    right: -8px;
+  }
+  &.coupon_select{
+    .conpon_inner{
+      border-color: #FA4946;
+    }
+    &::before,&::after{
+      border-color: #FA4946;
+    }
+  }
+  &.coupon_disable {
+    opacity: 0.6;
+    color: #999;
+    &::before,&::after{
+      border-color:#999;
+    }
+    .conpon_inner{
+      border-color:#999;
+    }
+    .info_left{
+      color: #999;
+    }
+    .info_limit {
+      color: #999;
+    }
+    .coupon_info::after {
+      border-bottom-color: #999;
+    }
+  }
+}
+.conpon_inner{
+  width: 330px;
+  height: 120px;
+  border-radius: 8px;
+  border: 1px solid #666;
+  overflow: hidden;
+}
+
+.coupon_info{
+  height: 88px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed #fff;
+  &::before{
+    content: '';
+    display: block;
+    height: 74px;
+    width: 70px;
+    position: absolute;
+    right: -10px;
+    bottom: 0;
+    background-image: url('@/img/bg_bear.png');
+    background-size: 160%;
+    background-repeat: no-repeat;
+  }
+  &::after{
+    content: '';
+    display: block;
+    width: 304px;
+    position: absolute;
+    left: 12px;
+    bottom: 0;
+    z-index: 1;
+    border-bottom: 1px dashed #666;
+  }
+  & > div{
+    z-index: 3;
+  }
+  .info_left{
+    width: 126px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+    box-sizing: border-box;
+    color: #FA4946;
+    .save_type{
+      display: flex;
+      flex-direction: column;
+      .type_font{
+        padding-left: 3px;
+      }
+    }
+    .count_font{
+      font-size: 36px;
+      font-weight: 500;
+    }
+    .symble_font{
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .type_font{
+      font-size: 14px;
+    }
+  }
+  .info_right {
+    flex-grow: 1;
+  }
+  
+  .info_from{
+    font-size: 16px;
+    margin-bottom: 8px;
+    max-width: 215px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .info_limit{
+    font-size: 12px;
+    line-height: 14px;
+    height: 42px;
+    max-width: 225px;
+    color: #666;
+    // word-break: break-word;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    & > div {
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.coupon_time{
+  height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+  color: #999;
+  position: relative;
+  display: flex;
+  align-items: center;
+  .time_mar{
+    margin-inline-start: 12px;
+    margin-bottom: -2px;
+  }
+}

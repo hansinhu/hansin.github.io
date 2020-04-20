@@ -1,0 +1,199 @@
+:global{
+  .cf_date_select{
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 14px;
+    &.cf_date_select_toggle{
+      padding-top: 24px;
+    }
+    &.cf_date_select_error{
+      .cf_date_select_warp{
+        border-bottom: 1px solid #f4333c;
+      }
+    }
+    &.cf_date_select_disabled{
+      color: #ccc;
+    }
+    .cf_date_select_warp{
+      position: relative;
+      display: flex;
+      align-items: center;
+      line-height: 20px;
+      border-bottom: 1px solid #e2e2e2;
+    }
+    .cf_date_select_label{
+      padding: 4px 1px;
+      color: #333;
+      font-weight: 500;
+      position: relative;
+      flex-shrink: 0;
+      padding-inline-end: 12px;
+    }
+    .cf_date_select_control{
+      flex-grow: 1;
+      display: flex;
+    }
+    .cf_date_select_inner{
+      box-sizing: border-box;
+      width: 100%;
+      padding: 4px 1px;
+      height: 28px;
+      line-height: 22px;
+      border: none;
+      outline: none;
+      border-radius: 0;
+      &::-webkit-input-placeholder {
+        color: #999;
+      }
+    }
+    .cf_date_select_clear{
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      margin: 0 4px;
+    }
+    .cf_date_select_placeholder{
+      color: #999;
+      height: 0;
+      line-height: 28px;
+      position: absolute;
+      top: 0;
+      transition: all 100ms linear;
+      &.cf_date_select_top{
+        transform: translateY(-20px);
+        font-size: 12px;
+        left: 0;
+      }
+    }
+    input:focus ~ .cf_date_select_placeholder{
+      transform: translateY(-20px);
+      font-size: 12px;
+      left: 0;
+    }
+  }
+  
+  .cf_date_select_error_tips{
+    font-size: 12px;
+    color: #f4333c;
+    margin-top: 2px;
+  }
+
+  .cf_date_pop{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,0.65);
+    font-size: 14px;
+    line-height: 1.5;
+    list-style: none;
+    position: absolute;
+    z-index: 1050;
+    .cf_date{
+      position: relative;
+      width: 280px;
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: left;
+      list-style: none;
+      outline: none;
+      // border-radius: 4px;
+      // box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border: 1px solid #999;
+    }
+    .cf_date_warp{
+      position: relative;
+      height: 270px;
+    }
+    .cf_date_panel{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      background: #fff;
+      border-radius: 4px;
+      outline: none;
+      top: 0;
+      height: 100%;
+      .cf_date_header{
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-bottom: 1px solid #999;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        .cf_date_header_val{
+          flex-grow: 1;
+        }
+        .cf_date_header_oprate{
+          width: 50px;
+          display: flex;
+          justify-content: center;
+          cursor: pointer;
+          &.cf_date_header_oprate_disabled{
+            color: #ccc;
+          }
+        }
+      }
+      .cf_date_year{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 24px;
+        .cf_date_year_item{
+          width: 60px;
+          height: 20px;
+          line-height: 20px;
+          margin-bottom: 20px;
+          text-align: center;
+          cursor: pointer;
+          &:hover:not(.cf_date_year_disabled){
+            text-decoration: underline;
+          }
+          &.cf_date_year_active{
+            background: #FAE6E6;
+            color: #FA4946;
+          }
+          &.cf_date_year_disabled{
+            background: #fff;
+            color: #ccc;
+            cursor: not-allowed;
+          }
+        }
+      }
+
+      .cf_date_month{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 24px;
+        .cf_date_month_item{
+          width: 60px;
+          height: 20px;
+          line-height: 20px;
+          margin-bottom: 20px;
+          text-align: center;
+          cursor: pointer;
+          &:hover:not(.cf_date_month_disabled){
+            text-decoration: underline;
+          }
+          &.cf_date_month_active{
+            background: #FAE6E6;
+            color: #FA4946;
+          }
+          &.cf_date_month_disabled{
+            background: #fff;
+            color: #ccc;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}

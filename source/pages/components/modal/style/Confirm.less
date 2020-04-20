@@ -1,0 +1,64 @@
+:global{
+  .cf_confirm_wrap{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 999;
+  }
+  .cf_confirm_container {
+    width: 520px;
+    border-radius: 6px;
+    background: #fff;
+    color: #000;
+    position: relative;
+    overflow: hidden;
+    top: 30%;
+    .cf_confirm_content {
+      display: flex;
+      font-size: 20px;
+      min-height: 100px;
+      box-sizing: border-box;
+      padding: 54px 60px;
+      color: #333;
+      display: flex;
+      text-align: left;
+      .cf_confirm_icon{
+        margin-inline-end: 12px;
+        color: #FA4946;
+      }
+    }
+  }
+  
+  .cf_confirm_btn{
+    display: flex;
+    padding: 0 52px 40px 52px;
+    justify-content: space-around;
+    button{
+      width: 200px;
+      line-height: 44px;
+      background: #fff;
+      font-size: 16px;
+      color: #666;
+      border: none;
+      outline: none;
+      border: 1px solid #999;
+      border-radius: 4px;
+      color: #333;
+      cursor: pointer;
+      &.cf_confirm_btn_single {
+        width: 400px;
+      }
+    }
+    .cf_confirm_cancel{
+      // border-right: 1px solid #eee;
+    }
+    .cf_confirm_ok{
+      // color: #FA423E;
+    }
+  }
+}

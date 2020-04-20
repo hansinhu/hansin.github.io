@@ -1,0 +1,31 @@
+.cf_collapse{
+  border-left: none;
+  border-right: none;
+  background: #fff;
+  &.cf_collapse_active{
+    .cf_collapse_icon_wrap{
+      transform: rotate(-180deg);
+    }
+  }
+  .cf_collapse_title{
+    line-height: 40px;
+    padding: 0 16px;
+    display: flex;
+    .cf_collapse_title_inner{
+      flex-grow: 1;
+    }
+  }
+  .cf_collapse_icon_wrap{
+    float: right;
+    transition: transform .3s;
+    transform: rotate(0);
+    .cf_collapse_icon{
+      font-size: 14px;
+      color: #666;
+    }
+  }
+  .cf_collapse_content{
+    transition: height .3s;
+    margin-left: 12px;
+  }
+}

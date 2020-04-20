@@ -1,0 +1,62 @@
+.pc_input_select_wrap {
+  position: relative;
+  .m_select_content {
+    position: absolute;
+    width: 100%;
+    top: 44px;
+  }
+}
+
+.pc_login_input {
+  margin-bottom: 4px;
+  font-size: 16px;
+  color: #333;
+  &.pc_login_input_isval {
+    :global{
+      .cf_input_item_warp {
+        border-color: #333;
+      }
+    }
+  }
+  :global{
+    .cf_input_item_inner {
+      height: 40px;
+      line-height: 40px;
+    }
+    .cf_input_item_extra {
+      color: #666;
+    }
+  }
+  .pc_phone_lable {
+    font-weight: 400;
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 12px;
+      border-left: 1px solid #999;
+      margin-inline-start: 12px;
+    }
+  }
+}
+
+.pc_mail_list {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  width: 100%;
+  left: 0;
+  z-index: 999;
+  .pc_mail {
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    padding: 4px;
+    border-bottom: 1px solid #e5e5e5;
+    word-break: break-all;
+    color: #666;
+    line-height: 32px;
+  }
+}

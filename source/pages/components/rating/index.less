@@ -1,0 +1,19 @@
+:global{
+  .cf_rating {
+    display: inline-flex;
+    align-items: center;
+    .cf_rating_bg_start{
+      color: #FFF0F0;
+      position: relative;
+      &:not(:last-child){
+        margin-inline-end: 5px;
+      }
+      .cf_rating_front_start{
+        position: absolute;
+        left: 0;
+        color: #FA4946;
+        overflow: hidden;
+      }
+    }
+  }
+}

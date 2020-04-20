@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",
+    "outDir": "./dist",
+    "rootDir": ".",
+    "watch": false,
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./source/*"],
+      "m/*": ["./source/pages/msite/*"],
+    },
+    "rootDirs": [".", "./source"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./source/typings"
+    ],
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "emitDecoratorMetadata": true
+  }
+}

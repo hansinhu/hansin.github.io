@@ -1,0 +1,49 @@
+.login_modal{
+  &.login_full_bg {
+    :global{
+      .cf_modal_mask {
+        background: #FBFBFB;
+      }
+      .cf_modal_container{
+        border: 1px solid #ccc;
+        margin-top: 80px;
+        .cf_modal_content{
+          width: 500px;
+          padding: 0 36px;
+          overflow: visible;
+        }
+      }
+    }
+  }
+  :global{
+    .cf_modal_close{
+      margin-right: -50px;
+      margin-top: -16px;
+      color: #fff;
+      i{
+        font-size: 36px !important;
+      }
+    }
+    .cf_modal_container{
+      .cf_modal_content{
+        width: 380px;
+        padding: 0 36px;
+      }
+    }
+  }
+  .login_logo {
+    height: 1px;
+    position: relative;
+    .logo_img {
+      position: absolute;
+      top: -90px;
+      left: 50px;
+      height: 68px;
+      width: 328px;
+      background-image: url('@/img/b2blogo_2.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
