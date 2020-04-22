@@ -22,9 +22,9 @@ const polyfills = [
   '@/styles/common/index.less',
 ]
 const EntryPages = {
-  pcsite: {
-    path: [...polyfills, '@/pages/pcsite/index.js'],
-  },
+  // pcsite: {
+  //   path: [...polyfills, '@/pages/pcsite/index.js'],
+  // },
   resume: {
     path: [...polyfills, '@/pages/resume/index.js'],
   },

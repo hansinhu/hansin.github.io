@@ -65,7 +65,7 @@ class App extends React.Component {
             }
           </div>
           <div>{this.title('自我概述')}</div>
-          <div className={styles.content}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, culpa? Commodi iste velit alias cum dignissimos libero itaque eos expedita numquam, natus porro facere fugit inventore, placeat provident recusandae vero?</div>
+          <div className={styles.content}>从事web前端开发工作5年；拥有扎实的前端技术栈，主导或参与开发过多个项目，能结合实际场景做出技术选型，架构设计；React、Vue、React-Native项目经验丰富，深入理解组件化开发；拥有一定的Nodejs开发经验，如前端渲染服务、接口聚合、前端脚手架、命令行等项目；长期的C端千万DAU项目经验保障了对业务的理解力和敏感性，沉淀出的理论也能快速复用到其他产品。</div>
           <div>{this.title('专业技能')}</div>
           <div className={styles.content}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, culpa? Commodi iste velit alias cum dignissimos libero itaque eos expedita numquam, natus porro facere fugit inventore, placeat provident recusandae vero?</div>
           <div>{this.title('工作经历')}</div>

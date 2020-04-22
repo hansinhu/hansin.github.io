@@ -56,9 +56,9 @@ module.exports = merge(baseWebpackConfig, {
   },
 
   devServer: {
-    host: 'dev.clubfactory.com',
+    host: 'localhost',
     disableHostCheck: true,
-    port: 8082,
+    port: 8083,
     hot: true,
     inline: true,
     open: true,
